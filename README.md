@@ -1,7 +1,13 @@
-# 🌊C-WILD WATER
-## **************CY Tech - C-WILD WATER**************
+# C-WILD WATER
 
-## ***Bienvenue dans notre programme***
+<a href="https://cytech.cyu.fr">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/CY_Tech.png" alt="CY Tech" width="120">
+</a>
+<a href="https://cytech.cyu.fr">
+  <img src="https://img.shields.io/badge/CY%20Tech-blue?style=for-the-badge&logo=https://upload.wikimedia.org/wikipedia/commons/4/4a/CY_Tech.png" alt="CY Badge">
+</a>
+
+## **Bienvenue dans notre programme**
 
 ## Sommaire
 1. [Description du projet](#description-du-projet)  
