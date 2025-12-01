@@ -1,3 +1,8 @@
+/**
+  *@file biblio.h
+  *@author J.Hamshigaa
+*/
+
 #ifndef BIBLIO_H
 #define BIBLIO_H
 
