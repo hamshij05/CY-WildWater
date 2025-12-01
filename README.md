@@ -8,7 +8,8 @@
 2. [Structure](#structure)  
 3. [Installation](#installation)  
 4. [Utilisation](#utilisation)
-5. [Auteurs](#auteurs)  
+5. [Arborescence du projet](#arborescence-du-projet)
+6. [Auteurs](#auteurs)  
 
 ## Description du projet     
 Le projet WildWater consiste à développer une application permettant de traiter un fichier de données de plusieurs millions de lignes concernant la distribution d’eau potable.  
@@ -27,6 +28,8 @@ Ce fichier CSV décrit les relations entre les différentes entités du réseau 
 Avant de commencer, assurez-vous les outils suivants sont installes sur votre système :   
 
 ## Utilisation
-  
+
+## Arborescence du projet
+
 ## Auteurs    
 - **Hamshigaa JEKUMAR** - hamshij05  
