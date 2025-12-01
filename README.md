@@ -1,4 +1,4 @@
-# C-WILD WATER
+<h1 align="center"> C-WILD WATER </h1>
 
 <a href="https://cytech.cyu.fr">
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/CY_Tech.png" alt="CY Tech" width="120">
