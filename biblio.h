@@ -1,6 +1,7 @@
 #ifndef BIBLIO_H
 #define BIBLIO_H
 
+//Inclusion des bibliothèques nécessaires
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
