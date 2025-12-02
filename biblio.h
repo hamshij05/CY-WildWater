@@ -14,24 +14,54 @@
 #include <math.h>
 #include <limits.h>
 
+//Structure de trançon
+typedef struct trançon{
+char
+
 //Struture de l'usine
 typedef struct usine {
-char identifiant;
-unsigned long capacité;
-unsigned long volume_capté;
-unsigned long volume_traite;
+ char identifiant[64]; //identifiant de la station
+ unsigned long capacité;
+ unsigned long volume_capté;
+ unsigned long volume_traite;
+ struct usine* suivante;
 }Usine;
 
-//Structure de l'AVL
-typedef struct{
-    char id[64];            // Identifiant de la station
-    double valeur1;         // Première valeur
-    double valeur2;         // Deuxième valeur
-    double valeur3;         // Troisième valeur
-    int hauteur;            // Hauteur du nœud
-    struct Avl *fg;         // Fils gauche
-    struct Avl *fd;         // Fils droit
-} AVL;
+
+
+
+typedef struct Troncon {
+    char aval[64];           // identifiant du nœud aval
+    double volume;           // volume d'eau
+    double fuite;            // pourcentage de fuite
+    struct Troncon *suivant; // liste chaînée
+} Troncon;
+
+typedef struct Noeud {
+    char id[64];             // identifiant du nœud (usine, stockage, jonction)
+    Troncon *sorties;        // liste des tronçons sortants
+    struct Noeud *fg;        // fils gauche pour AVL
+    struct Noeud *fd;        // fils droit pour AVL
+    int hauteur;             // hauteur AVL
+    int equilibre;           // facteur d'équilibre AVL
+} Noeud;
+
+// Fonctions AVL
+Noeud* creerNoeud(const char *id);
+int hauteur(Noeud *n);
+void maj(Noeud *n);
+Noeud* rotationGauche(Noeud *x);
+Noeud* rotationDroite(Noeud *y);
+Noeud* insererNoeud(Noeud *racine, Noeud *n);
+Noeud* rechercherNoeud(Noeud *racine, const char *id);
+void afficherArbre(Noeud *racine);
+
+// Fonctions tronçon
+void ajouterTroncon(Noeud *n, const char *aval, double volume, double fuite);
+
+#endif
+
+
 
 Traitement : usine de traiteent
 Stockage : 
