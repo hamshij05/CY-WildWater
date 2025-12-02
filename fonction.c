@@ -53,4 +53,4 @@ Arbre* doubleRotationDroite(Arbre* a){
 
 //Insertion de l'arbre AVL
 
-
+//Fonction pour calculer l'hauteur d'arbre AVL
