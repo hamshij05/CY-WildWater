@@ -22,11 +22,16 @@ unsigned long volume_capté;
 unsigned long volume_traite;
 }Usine;
 
-//Stucture de la distribution principale (jonctions)
-typedef struct {
-char*
-//Struture d'Arbre AVL
-typedef struct avl{
+//Structure de l'AVL
+typedef struct{
+    char id[64];            // Identifiant de la station
+    double valeur1;         // Première valeur
+    double valeur2;         // Deuxième valeur
+    double valeur3;         // Troisième valeur
+    int hauteur;            // Hauteur du nœud
+    struct Avl *fg;         // Fils gauche
+    struct Avl *fd;         // Fils droit
+} AVL;
 
 Traitement : usine de traiteent
 Stockage : 
