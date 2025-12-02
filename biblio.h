@@ -26,13 +26,16 @@ typedef struct usine {
  struct usine* fd; //fils droit
  int hauteur; //hauteur AVL
  int equilibre; //facteur d'équilibre AVL
+ // Pour le calcul des fuites (peut pointer vers le nœud de l'arbre de distribution)
+ void *distribution_node; // Pointeur vers le nœud racine de la distribution de cette usine
+// Pointeur vers le premier nœud de distribution en aval (Stockages)
+    struct NoeudDistribution *racine_distribution; 
 }Usine;
 
     
   
     
-    // Pour le calcul des fuites (peut pointer vers le nœud de l'arbre de distribution)
-    void *distribution_node; // Pointeur vers le nœud racine de la distribution de cette usine
+    
 } Factory;
 
 
@@ -54,8 +57,7 @@ typedef struct Usine {
     long volume_capte_total_k_m3; 
     long volume_traite_reel_k_m3; 
     
-    // Pointeur vers le premier nœud de distribution en aval (Stockages)
-    struct NoeudDistribution *racine_distribution; 
+    
     
     // Champs pour la gestion de l'AVL
     struct Usine *gauche;
