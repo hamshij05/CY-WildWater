@@ -17,6 +17,10 @@
 //Struture de l'usine
 typedef struct usine {
 char identifiant;
+unsigned long capacité;
+unsigned long volume_capté;
+unsigned long volume_traite;
+}Usine;
 
 //Stucture de la distribution principale (jonctions)
 typedef struct {
