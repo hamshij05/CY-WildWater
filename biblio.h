@@ -14,9 +14,7 @@
 #include <math.h>
 #include <limits.h>
 
-//Structure de trançon
-typedef struct trançon{
-char
+
 
 //Struture de l'usine
 typedef struct usine {
@@ -30,12 +28,12 @@ typedef struct usine {
 
 
 
-typedef struct Troncon {
-    char aval[64];           // identifiant du nœud aval
-    double volume;           // volume d'eau
-    double fuite;            // pourcentage de fuite
-    struct Troncon *suivant; // liste chaînée
-} Troncon;
+typedef struct troncon {
+    char aval[64]; // identifiant du nœud aval
+    double volume; // volume d'eau
+    double fuite; // pourcentage de fuite
+    struct Troncon* suivant; // liste chaînée
+}Troncon;
 
 typedef struct Noeud {
     char id[64];             // identifiant du nœud (usine, stockage, jonction)
