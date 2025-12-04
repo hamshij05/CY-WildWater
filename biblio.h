@@ -29,14 +29,9 @@ typedef struct usine {
  // Pour le calcul des fuites (peut pointer vers le nœud de l'arbre de distribution)
  void *distribution_node; // Pointeur vers le nœud racine de la distribution de cette usine
 // Pointeur vers le premier nœud de distribution en aval (Stockages)
-    struct NoeudDistribution *racine_distribution; 
+ struct NoeudDistribution *racine_distribution;
+Trancon* sorties; //liste des trançons sortants
 }Usine;
-
-    
-  
-    
-    
-} Factory;
 
 
 typedef struct troncon {
@@ -46,24 +41,9 @@ typedef struct troncon {
     struct Troncon* suivant; // liste chaînée
 }Troncon;
 
-typedef struct Noeud {
-    char id[64];             // identifiant du nœud (usine, stockage, jonction)
-    Troncon *sorties;        // liste des tronçons sortants
-// usine.h
-
-typedef struct Usine {
-    char *id;               // Identifiant unique de l'usine (clé de l'AVL)
-    long max_capacite_k_m3; 
-    long volume_capte_total_k_m3; 
-    long volume_traite_reel_k_m3; 
     
     
-    
-    // Champs pour la gestion de l'AVL
-    struct Usine *gauche;
-    struct Usine *droite;
-    int hauteur; 
-} Usine;    
+   
 
 typedef struct Troncon {
     struct NoeudDistribution *noeud_aval; // Pointeur vers l'acteur aval (enfant)
