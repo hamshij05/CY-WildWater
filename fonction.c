@@ -32,9 +32,9 @@ Arbre *rotationGauche(Arbre *pivot){
 
 
 //Rotation droite pour rééquilibrer l'arbre
-Arbre *rotationDroite(Arbre *a){
-  Arbre* pivot = a->fg; //le fils gauche devient le pivot
-  Arbre* tmp = pivot->fd; //le fils droit de pivot
+AVL *rotationDroite(Arbre *a){
+  AVL* pivot = a->fg; //le fils gauche devient le pivot
+  AVL* tmp = pivot->fd; //le fils droit de pivot
 
   pivot->fd = a; //a devient le fils droit de pivot
   a->fg = tmp; 
