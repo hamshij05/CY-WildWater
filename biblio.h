@@ -16,22 +16,22 @@
 
 
 
-//Struture de l'usine
-typedef struct usine {
+//Struture de l'AVL pour les usines
+typedef struct avl {
  char identifiant[64]; //identifiant unique de l'usine
  unsigned long capacité; //volume maximal de quantité d'eau de traitement
  unsigned long volume_capte; //somme des volumes captés
  unsigned long volume_traite; //somme pondéres des volumes captés (volume réellement traité)
- struct usine* fg; //fils gauche
- struct usine* fd; //fils droit
- int hauteur; //hauteur AVL
  int equilibre; //facteur d'équilibre AVL
+ struct avl* fg; //fils gauche
+ struct avl* fd; //fils droit
+ int hauteur; //hauteur AVL
  // Pour le calcul des fuites (peut pointer vers le nœud de l'arbre de distribution)
  void *distribution_node; // Pointeur vers le nœud racine de la distribution de cette usine
 // Pointeur vers le premier nœud de distribution en aval (Stockages)
  struct NoeudDistribution *racine_distribution;
 Trancon* sorties; //liste des trançons sortants
-}Usine;
+}AVL;
 
 
 typedef struct troncon {
@@ -42,18 +42,6 @@ typedef struct troncon {
 }Troncon;
 
     
-    
-   
-
-typedef struct Troncon {
-    struct NoeudDistribution *noeud_aval; // Pointeur vers l'acteur aval (enfant)
-    double pourcentage_fuite;            // Pourcentage de fuites dans ce tronçon (colonne 5)
-    
-    struct Troncon *suivant;             // Pour la liste chaînée des tronçons sortants
-} Troncon; 
-
-// Fonctions AVL
-Noeud* creerNoeud(const char *id);
 int hauteur(Noeud *n);
 void maj(Noeud *n);
 Noeud* rotationGauche(Noeud *x);
@@ -79,17 +67,21 @@ typedef struct NoeudDistribution {
     
     // Autres données si nécessaires (ex: identifiant de l'usine si non géré par le tronçon amont)
 } NoeudDistribution;
-Arbre *creationArbre(long identifiant, const char* capacite, const char* consommation); //Création de noeud pour l'arbre AVL
-Arbre *insertionAVL(Arbre* a, long identifiant, const char* capacite,const char* consommation); //Insertion de l'arbre AVL
-long max(long x, long y); //Fonction pour obtenir la valeur maximale
-Arbre *rotationGauche(Arbre *pivot); //Rotation gauche pour réequilibrer l'arbre
-Arbre *rotationDroite(Arbre *a); //Rotation droite pour réequilibrer l'arbre
+
+//Prototype des fonctions
+AVL* creationArbre(const char* identifiant); //Création de noeud pour l'arbre AVL
+AVL* insertionAVL(AVL* a, const char* identifiant); //Insertion de l'arbre AVL
+AVL* recherche(AVL* a, const char* identifiant);
+void freeAVL(Arbre* a); //Libère la mémoire de l'arbre AVL
+//Parcours d'AVL
+void infixe(Arbre* a, FILE* fichier_resultat); //Parcours en ordre croissant (infixe = parcours en ordre) et écriture dans le fichier de sortie
+//Fonctions utiles
+int hauteur(AVL* a); //Calcul de l'hauteur de l'arbre AVL
+int facteur_equilibre(AVL* r); //Calcul du facteur d'équilibre
+AVL* rotationGauche(Arbre *pivot); //Rotation gauche pour réequilibrer l'arbre
+AVL* rotationDroite(Arbre *a); //Rotation droite pour réequilibrer l'arbre
 Arbre *doubleRotationGauche(Arbre* a); //Double Rotation Gauche
 Arbre *doubleRotationDroite(Arbre* a); //Double Rotation Droite
-int hauteur(Arbre* a); //Calcul de l'hauteur de l'arbre AVL
-int facteur_equilibre(Arbre* r); //Calcul du facteur d'équilibre
-void infixe(Arbre* a, FILE* fichier_resultat); //Parcours en ordre croissant (infixe = parcours en ordre) et écriture dans le fichier de sortie
-void freeAVL(Arbre* a); //Libère la mémoire de l'arbre AVL
 void traiterFichier(const char* nomFichier, const char* nomFichierTmp); // traite les fichiers en AVL
 
 #endif
