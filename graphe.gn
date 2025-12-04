@@ -1,3 +1,6 @@
+>h1>corriger </h1>
+/////Corriger
+
 # Ce script Gnuplot génere un histograe à partir d'un fichier CSV.
 filenae ="
 set datafile separator ":"
