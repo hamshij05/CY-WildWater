@@ -1,8 +1,8 @@
 #include "biblio.h"
 
 //Création de nouveau noeud pour l'arbre AVL
-Arbre *creationArbre(int a){
-   Arbre *nouveau=malloc(sizeof(Arbre)); 
+AVL *creationArbre(int a){
+   AVL *nouveau=malloc(sizeof(AVL)); 
    if(nouveau==NULL){ //vérification de l'échec d’allocation
       exit(1); //quitter le programme en cas d'échec
    }
