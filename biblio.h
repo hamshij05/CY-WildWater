@@ -85,14 +85,3 @@ Arbre *doubleRotationDroite(Arbre* a); //Double Rotation Droite
 void traiterFichier(const char* nomFichier, const char* nomFichierTmp); // traite les fichiers en AVL
 
 #endif
-
-
-
-Traitement : usine de traiteent
-Stockage : 
-Distribution : principale (jonctions), secondaire (raccordements), branchement (relier le réseaux avec le compteur d'eau de l'usager)
-Usagers : plus de vingaine de million
-
-Seuls les trançons de raccordement utilises  par notre programme
-Trançons (captage, stockage, distribution principale, secondaire, branchement) 
-Les infos de chaque usine de traitement (caacité maximale annuelle de traitement de l'eau)
