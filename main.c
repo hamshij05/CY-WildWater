@@ -16,6 +16,8 @@ strcpy(resultat->col3, "-");
 resultat->volume = -1;
 resultat->fuite= -1.0;
 
+token= strtok(line, ";");
+
 
 //Structure pour
 
