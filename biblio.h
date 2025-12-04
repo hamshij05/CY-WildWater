@@ -73,15 +73,19 @@ AVL* creationArbre(const char* identifiant); //Création de noeud pour l'arbre A
 AVL* insertionAVL(AVL* a, const char* identifiant); //Insertion de l'arbre AVL
 AVL* recherche(AVL* a, const char* identifiant);
 void freeAVL(Arbre* a); //Libère la mémoire de l'arbre AVL
+
 //Parcours d'AVL
 void infixe(Arbre* a, FILE* fichier_resultat); //Parcours en ordre croissant (infixe = parcours en ordre) et écriture dans le fichier de sortie
+
 //Fonctions utiles
 int hauteur(AVL* a); //Calcul de l'hauteur de l'arbre AVL
 int facteur_equilibre(AVL* r); //Calcul du facteur d'équilibre
-AVL* rotationGauche(Arbre *pivot); //Rotation gauche pour réequilibrer l'arbre
-AVL* rotationDroite(Arbre *a); //Rotation droite pour réequilibrer l'arbre
-Arbre *doubleRotationGauche(Arbre* a); //Double Rotation Gauche
-Arbre *doubleRotationDroite(Arbre* a); //Double Rotation Droite
+AVL* rotationGauche(AVL* pivot); //Rotation gauche pour réequilibrer l'arbre
+AVL* rotationDroite(AVL* a); //Rotation droite pour réequilibrer l'arbre
+Arbre *doubleRotationGauche(AVL* a); //Double Rotation Gauche
+Arbre *doubleRotationDroite(AVL* a); //Double Rotation Droite
+
+
 void traiterFichier(const char* nomFichier, const char* nomFichierTmp); // traite les fichiers en AVL
 
 #endif
