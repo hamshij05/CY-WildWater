@@ -7,16 +7,20 @@
 
 //Parse une ligne du CSV
 int pars_csv(char* ligne, CSVLigne *resultat){
-char *token;
-int col=0;
-//Initialiser
-strcpy(resultat->col1, "-");
-strcpy(resultat->col2, "-");
-strcpy(resultat->col3, "-");
-resultat->volume = -1;
-resultat->fuite= -1.0;
+    char *token;
+    int col=0;
+    //Initialiser
+    strcpy(resultat->col1, "-");
+    strcpy(resultat->col2, "-");
+    strcpy(resultat->col3, "-");
+    resultat->volume = -1;
+    resultat->fuite= -1.0;
 
-token= strtok(line, ";");
+    token= strtok(line, ";");
+    while (token!=NULL && col<5){
+        //supprimer \n si présent
+char *newligne = strchr(token,'\n')
+
 
 
 //Structure pour
