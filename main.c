@@ -19,7 +19,9 @@ int pars_csv(char* ligne, CSVLigne *resultat){
     token= strtok(line, ";");
     while (token!=NULL && col<5){
         //supprimer \n si présent
-char *newligne = strchr(token,'\n')
+            char *newligne = strchr(token,'\n');
+            if (newligne) *newligne = '\0';
+            switch (col)
 
 
 
